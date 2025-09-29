@@ -22,7 +22,7 @@
 
 **Part 1: Exploring Milvus - Installation, Concepts, and Core Components**
 
-*   [**1.1 Overview of Milvus Vector Database**](./ch1/ch1_1.ipynb)
+*   [**1.1 Overview of Milvus Vector Database**](./ch1/ch1_1_en.ipynb)
     *   What is a Vector Embedding?
     *   Why do we need a vector database? (Comparison with traditional databases, the need for ANN search)
     *   What is Milvus? (Positioning, core features, advantages, community overview)
@@ -36,7 +36,7 @@
         *   Partition: Logical grouping of data within a Collection (to improve query efficiency), optimizing data management and query performance.
     *   Milvus Deployment: Comparison of Lite vs. Standalone vs. Cluster modes (The workshop will use Standalone).
 
-*   [**1.2 Hands-on Milvus Installation**](./ch1/ch1_2.ipynb)
+*   [**1.2 Hands-on Milvus Installation**](./ch1/ch1_2_en.ipynb)
     *   Introduction to different installation methods (Docker Compose, Kubernetes, Cloud Services).
     *   **Hands-on: Zilliz Cloud Free Tier** 
         *   Register for a Zilliz Cloud account.
@@ -53,7 +53,7 @@
         *   Introduction to the WebUI: A graphical management tool.
         *   Introduction to Attu: Milvus's visualization management tool (installation and basic usage).
 
-*   [**1.3 Analysis of Milvus Core Architecture and Components**](./ch1/ch1_3.ipynb) 
+*   [**1.3 Analysis of Milvus Core Architecture and Components**](./ch1/ch1_3_en.ipynb) 
     *   Overview of Milvus's distributed architecture (decoupled design).
     *   Detailed explanation of core component functions:
         *   **Proxy:** Request entry point, load balancing.
