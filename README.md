@@ -126,7 +126,7 @@
 
 **Part 3: Milvus Application Practice - Image Search, RAG, and Agent Use Cases**
 
-*   [**3.1 Applying Milvus in Image Search**](./ch3/ch3_1.ipynb)
+*   [**3.1 Applying Milvus in Image Search**](./ch3/ch3_1_en.ipynb)
     *   **Process:** Image Loading -> Image Vectorization (Embedding) -> Storage -> Retrieval.
     *   **Role of Milvus in Image Search:** Store image feature vectors to enable Image-to-Image Search or Text-to-Image Search.
     *   **Case Study / Code Walkthrough:** 
@@ -136,7 +136,7 @@
         *   Perform a vector search in Milvus to return the IDs or paths of similar images.
     *   **Hands-on Exercise 1:** Perform a text-to-image search on a small number of images using cross-modal search (CLIP).
 
-*   [**3.2 Applying Milvus in RAG (Retrieval-Augmented Generation)**](./ch3/ch3_2.ipynb)
+*   [**3.2 Applying Milvus in RAG (Retrieval-Augmented Generation)**](./ch3/ch3_2_en.ipynb)
     *   **RAG Process Review:** Document Loading -> Chunking -> Vectorization (Embedding) -> Storage -> Retrieval -> Generation.
     *   **Role of Milvus in RAG:** Acts as an external knowledge base to store text chunks and their vectors for fast retrieval of relevant text.
     *   **Case Study / Code Walkthrough:** 
@@ -149,7 +149,7 @@
     *   **Hands-on Exercise 2:** Try modifying the search parameters and observe the changes in the retrieval results.
     *   [TODO]: Add more RAG use cases or RAG best practices.
 
-*   [**3.3 Applying Milvus in AI Agents**](./ch3/ch3_3.ipynb)
+*   [**3.3 Applying Milvus in AI Agents**](./ch3/ch3_3_en.ipynb)
     *   **AI Agent Architecture Overview:** Planning, Memory, Tools.
     *   **Role of Milvus in Agents:**
         *   **External Knowledge Base:** Stores external information that the Agent needs to query (similar to RAG).
@@ -161,7 +161,7 @@
     *   Discussion: How Milvus empowers Agents to perform tasks more intelligently.
     *   **Hands-on Exercise 3:** Hands-on with an AI Agent Demo.
 
-*   [**3.4 Overview of Milvus Ecosystem Features**](./ch3/ch3_4.ipynb)
+*   [**3.4 Overview of Milvus Ecosystem Features**](./ch3/ch3_4_en.ipynb)
     *   Brief introduction to Milvus ecosystem tools (data synchronization VTS, Milvus CDC, Milvus Backup, VectorDBBench, DeepSearcher, MCP).
     *   Future applications of Milvus in other fields (recommendation systems, anomaly detection, etc.).
     *   Recommended learning resources (official documentation, community, GitHub).
@@ -170,17 +170,17 @@
 
 
 **Part 4: Advanced Milvus Practice**
-*   [**4.1 Hands-on Milvus Observability and Operations**](./ch4/ch4_1.ipynb)
+*   [**4.1 Hands-on Milvus Observability and Operations**](./ch4/ch4_1_en.ipynb)
     *   **Observability Deployment**: A complete observability solution based on Prometheus + Loki + Jaeger + Grafana.
     *   **Core Monitoring Metrics**: In-depth understanding of Milvus's key performance indicators and health status.
-*   [**4.2 Hands-on Benchmarking with VectorDBBench**](./ch4/ch4_2.ipynb)
+*   [**4.2 Hands-on Benchmarking with VectorDBBench**](./ch4/ch4_2_en.ipynb)
     *   **Introduction to VectorDBBench**
     *   **Deployment and Installation**
     *   **Web Interface and Features**
     *   **Benchmarking with Default Datasets**
     *   **Benchmarking with Custom Datasets**
     *   **Result Analysis**
-*   [**4.3 Milvus Performance Tuning**](./ch4/ch4_3.ipynb)
+*   [**4.3 Milvus Performance Tuning**](./ch4/ch4_3_en.ipynb)
     *   **Summary of Common Issues from the Milvus Community**
         *   Memory: Saving as much as possible.
         *   Insertion: Smooth data ingestion is the first step to a good developer experience.
