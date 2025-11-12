@@ -72,7 +72,7 @@
 
 **Part 2: Basic Milvus Operations - Using the Python SDK**
 
-*   [**2.1 Connecting to Milvus and Managing Collections**](./ch2/ch2_1.ipynb)
+*   [**2.1 Connecting to Milvus and Managing Collections**](./ch2/ch2_1_en.ipynb)
     *   **Concept: Collection** 
     *   **Hands-on: Defining a Collection Schema.**
         *   Concept of Fields (Primary Key Field, Vector Field, Scalar Field).
@@ -84,7 +84,7 @@
     *   **Hands-on: Loading and releasing a Collection.** 
     *   **Hands-on Exercise 1:** Create a simple Collection with several Scalar Fields and one Vector Field.
 
-*   [**2.2 Data Insertion and Management**](./ch2/ch2_2.ipynb)
+*   [**2.2 Data Insertion and Management**](./ch2/ch2_2_en.ipynb)
     *   **Concept: Entity**.
     *   **Concept: Partition**.
     *   **Hands-on: Preparing data for insertion.**
@@ -94,7 +94,7 @@
     *   **Hands-on: Deleting data (by ID or filter conditions).** 
     *   **Hands-on Exercise 2:** Insert a batch of mock data into the previously created Collection and try deleting some of it.
 
-*   [**2.3 Building and Managing Indexes**](./ch2/ch2_3.ipynb)
+*   [**2.3 Building and Managing Indexes**](./ch2/ch2_3_en.ipynb)
     *   **Concept: Index** 
     *   **Core Concept: Approximate Nearest Neighbor Search (ANNS).** 
     *   Brief introduction to common vector index types and their use cases:
@@ -109,7 +109,7 @@
     *   **Hands-on: Checking the index status.**
     *   **Hands-on Exercise 3:** Create an HNSW index for the Vector Field in your Collection.
 
-*   [**2.4 Vector Similarity Search, Query, and Hybrid Search**](./ch2/ch2_4.ipynb)
+*   [**2.4 Vector Similarity Search, Query, and Hybrid Search**](./ch2/ch2_4_en.ipynb)
     *   **Concept: Vector Search.**
     *   **Hands-on: Executing a vector search.**
         *   Prepare search vectors.
