@@ -195,7 +195,8 @@
     *   **Accelerating Milvus in Practice: From Resource Allocation to Parameter Tuning**
         *   Physical resource configuration.
         *   Parameter tuning related to vector indexes.
-
+*   [**4.4 Milvus Upgrade**](./ch4/ch4_4_en.ipynb)
+    *   **Milvus 2.5 → 2.6 upgrade**
 
 ----
 
