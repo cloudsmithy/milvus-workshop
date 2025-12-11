@@ -50,7 +50,7 @@ jobs:
             depth=$(echo "$html" | tr -cd '/' | wc -c)
             prefix=""
             for ((i=2; i<depth; i++)); do prefix="../$prefix"; done
-            sed -i "s|</head>|<link rel=\"stylesheet\" href=\"${prefix}custom.css\"><script>document.addEventListener('DOMContentLoaded',function(){var b=document.createElement('a');b.href='${prefix}index.html';b.className='back-btn';b.innerHTML='← 返回目录';document.body.prepend(b);});</script></head>|" "$html"
+            sed -i "s|</head>|<link rel=\"stylesheet\" href=\"${prefix}custom.css\"></head>|" "$html"
           done
       
       - name: Generate index page
