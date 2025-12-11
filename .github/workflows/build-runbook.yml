@@ -42,6 +42,18 @@ jobs:
           cp -r ch3/milvus_image_search_data _site/ch3/ 2>/dev/null || true
           cp -r ch4/images _site/ch4/ 2>/dev/null || true
           cp -r ch4/tutorial-yaml _site/ch4/ 2>/dev/null || true
+          cp scripts/custom.css _site/custom.css
+      
+      - name: Inject custom CSS into HTML files
+        run: |
+          for html in $(find _site -name "*.html" -not -name "index.html"); do
+            # Get relative path to root for CSS link
+            depth=$(echo "$html" | tr -cd '/' | wc -c)
+            prefix=""
+            for ((i=2; i<depth; i++)); do prefix="../$prefix"; done
+            # Inject CSS link and back button before </head>
+            sed -i "s|</head>|<link rel=\"stylesheet\" href=\"${prefix}custom.css\"><script>document.addEventListener('DOMContentLoaded',function(){var b=document.createElement('a');b.href='${prefix}index.html';b.className='back-btn';b.innerHTML='← 返回目录';b.style.cssText='position:fixed;top:20px;left:20px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:10px 20px;border-radius:25px;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 4px 15px rgba(102,126,234,0.4);z-index:1000;';document.body.prepend(b);});</script></head>|" "$html"
+          done
       
       - name: Generate index page
         run: |
