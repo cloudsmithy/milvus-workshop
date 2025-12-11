@@ -6,12 +6,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,7 +31,7 @@ jobs:
               mkdir -p "_site/$chapter"
               for notebook in "$chapter"/*.ipynb; do
                 if [ -f "$notebook" ]; then
-                  jupyter nbconvert --to html "$notebook" --output-dir "_site/$chapter"
+                  jupyter nbconvert --to html --template lab "$notebook" --output-dir "_site/$chapter"
                 fi
               done
             fi
@@ -128,18 +126,9 @@ jobs:
           </html>
           EOF
       
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
