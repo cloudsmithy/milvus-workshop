@@ -1,0 +1,272 @@
+/* Milvus Workshop - Custom Notebook Style */
+
+:root {
+  --primary: #667eea;
+  --primary-dark: #764ba2;
+  --bg: #f8f9fc;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-light: #4a4a68;
+  --border: #e8e8f0;
+  --code-bg: #282c34;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  padding: 0;
+  margin: 0;
+}
+
+/* Container */
+#notebook-container, .jp-Notebook {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Header bar */
+body::before {
+  content: '';
+  display: block;
+  height: 6px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Back to index link */
+body::after {
+  content: '← Back to Index';
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Cells */
+.cell, .jp-Cell {
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin: 16px 0;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid var(--border);
+}
+
+/* Markdown cells */
+.text_cell, .jp-MarkdownCell {
+  padding: 24px 28px;
+}
+
+/* Code cells */
+.code_cell, .jp-CodeCell {
+  background: var(--card-bg);
+}
+
+/* Input area */
+.input_area, .jp-InputArea {
+  background: var(--code-bg);
+  border-radius: 8px;
+  border: none;
+  margin: 0;
+}
+
+.input_area pre, .jp-InputArea pre {
+  background: transparent;
+  color: #abb2bf;
+  padding: 16px;
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Output area */
+.output_area, .jp-OutputArea {
+  background: #fafbfc;
+  border-radius: 8px;
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+
+.output_area pre, .jp-OutputArea pre {
+  background: transparent;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Prompt */
+.prompt, .jp-InputPrompt, .jp-OutputPrompt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  min-width: 80px;
+  color: var(--text-light);
+}
+
+.jp-InputPrompt {
+  color: #667eea;
+}
+
+.jp-OutputPrompt {
+  color: #e06c75;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+h3 { font-size: 1.25rem; }
+
+/* Links */
+a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Code inline */
+code {
+  background: #f0f0f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9em;
+  color: #e06c75;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f8f9fc;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #667eea;
+  margin: 16px 0;
+  padding: 12px 20px;
+  background: #f8f9fc;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-light);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 24px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0d0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0b0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #notebook-container, .jp-Notebook {
+    padding: 20px 12px;
+  }
+  
+  .cell, .jp-Cell {
+    padding: 16px;
+    margin: 12px 0;
+  }
+  
+  body::after {
+    position: relative;
+    display: block;
+    margin: 20px;
+    text-align: center;
+  }
+}
