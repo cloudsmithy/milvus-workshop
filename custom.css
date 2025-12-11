@@ -203,30 +203,7 @@ li {
   margin: 8px 0;
 }
 
-/* Back button - Apple style */
-.back-btn {
-  position: fixed;
-  top: 24px;
-  left: 24px;
-  color: var(--accent);
-  font-size: 17px;
-  font-weight: 400;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  z-index: 1000;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 8px 16px;
-  border-radius: 20px;
-}
 
-.back-btn:hover {
-  text-decoration: none;
-  background: rgba(255,255,255,0.95);
-}
 
 /* Scrollbar - minimal */
 ::-webkit-scrollbar {
