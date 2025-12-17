@@ -198,6 +198,3 @@
 *   [**4.4 Milvus Upgrade**](./ch4/ch4_4_en.ipynb)
     *   **Milvus 2.5 → 2.6 upgrade**
 
-----
-
-This workshop covers the complete process of using Milvus, from installation, basic concepts, and core operations to practical applications. Combining theoretical explanations with extensive hands-on practice, it will effectively help newcomers quickly master Milvus and apply it in their own projects.
