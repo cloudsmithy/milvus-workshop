@@ -1,0 +1,56 @@
+name: Build Markdown Ebook
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install nbconvert jupyter
+      
+      - name: Create output directory
+        run: mkdir -p _ebook
+
+      - name: Convert notebooks to Markdown
+        run: |
+          for chapter in ch1 ch2 ch3 ch4; do
+            if [ -d "$chapter" ]; then
+              mkdir -p "_ebook/$chapter"
+              for notebook in "$chapter"/*.ipynb; do
+                if [ -f "$notebook" ]; then
+                  jupyter nbconvert --to markdown --output-dir="_ebook/$chapter" "$notebook"
+                fi
+              done
+            fi
+          done
+      
+      - name: Copy assets
+        run: |
+          # Copy image folders that may be referenced by markdown
+          cp -r ch3/milvus_image_search_data _ebook/ch3/ 2>/dev/null || true
+          cp -r ch3/docs _ebook/ch3/ 2>/dev/null || true
+          cp -r ch4/images _ebook/ch4/ 2>/dev/null || true
+          cp -r ch4/tutorial-yaml _ebook/ch4/ 2>/dev/null || true
+          cp README.md README-zh.md _ebook/ 2>/dev/null || true
+      
+      - name: Deploy to ebook branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_ebook
+          publish_branch: ebook
